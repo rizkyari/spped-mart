@@ -73,7 +73,7 @@ export default class profile extends Component {
 
     return (
       <Container>
-        <Header style={styles.header}>
+        <Header style={{backgroundColor: 'white'}}>
           <View style={styles.container}>
             <View>
               <Text style={styles.headerText}>Settings</Text>
@@ -89,13 +89,12 @@ export default class profile extends Component {
                   'https://cdn1.iconfinder.com/data/icons/technology-devices-2/100/Profile-512.png',
               }}
             />
-            <Text style={styles.textAdmin}>Halo, {this.state.data.user}</Text>
-            <Text style={styles.textAdmin}>
-              Your email : {this.state.data.email}
-            </Text>
-            <Text style={styles.textAdmin}>
-              Your address : {this.state.data.address}
-            </Text>
+            {this.state.data.map(item => (
+              <View style={{alignItems: 'center'}}>
+                <Text style={styles.textAdmin}>Halo, {item.user}</Text>
+                <Text style={styles.textAdmin}>Your email : {item.email}</Text>
+              </View>
+            ))}
             <Button style={styles.buttonLogout}>
               <Text>Log Out</Text>
             </Button>
@@ -107,10 +106,10 @@ export default class profile extends Component {
               <Icon name="home" style={{color: 'black'}} />
               <Text style={{color: 'black', fontWeight: 'bold'}}>home</Text>
             </Button>
-            <Button onPress={() => this.props.navigation.navigate('Cart')}>
+            {/* <Button onPress={() => this.props.navigation.navigate('Cart')}>
               <Icon name="cart" style={{color: 'black'}} />
               <Text style={{color: 'black'}}>Cart</Text>
-            </Button>
+            </Button> */}
             <Button onPress={() => this.props.navigation.navigate('Profile')}>
               <Icon name="person" style={{color: 'white'}} />
               <Text style={{color: 'white'}}>Profile</Text>
@@ -146,7 +145,7 @@ const styles = {
     borderRadius: 5,
   },
   headerText: {
-    color: 'white',
+    color: 'black',
     fontSize: 20,
     fontWeight: 'bold',
   },

@@ -114,10 +114,10 @@ export default class cart extends Component {
               <Icon name="home" style={{color: 'black'}} />
               <Text style={{color: 'black', fontWeight: 'bold'}}>home</Text>
             </Button>
-            <Button onPress={() => this.props.navigation.navigate('Cart')}>
+            {/* <Button onPress={() => this.props.navigation.navigate('Cart')}>
               <Icon name="cart" style={{color: 'white'}} />
               <Text style={{color: 'white'}}>Cart</Text>
-            </Button>
+            </Button> */}
             <Button onPress={() => this.props.navigation.navigate('Profile')}>
               <Icon name="person" style={{color: 'black'}} />
               <Text style={{color: 'black'}}>Profile</Text>

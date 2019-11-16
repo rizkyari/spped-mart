@@ -87,6 +87,7 @@ export default class ForYou extends Component {
   handleCart = image => {
     this.state.cart.push({cart: image});
     console.log(this.state.cart);
+    this.props.navigation.navigate('Cart', {cart: this.state.cart});
   };
 
   render() {
@@ -194,10 +195,13 @@ export default class ForYou extends Component {
               <Icon name="home" style={{color: 'white'}} />
               <Text style={{color: 'white', fontWeight: 'bold'}}>home</Text>
             </Button>
-            <Button onPress={() => this.props.navigation.navigate('Cart',{cart:this.state.cart})}>
+            {/* <Button
+              onPress={() =>
+                this.props.navigation.navigate('Cart', {cart: this.state.cart})
+              }>
               <Icon name="cart" style={{color: 'black'}} />
               <Text style={{color: 'black'}}>Cart</Text>
-            </Button>
+            </Button> */}
             <Button onPress={() => this.props.navigation.navigate('Profile')}>
               <Icon name="person" style={{color: 'black'}} />
               <Text style={{color: 'black'}}>Profile</Text>
