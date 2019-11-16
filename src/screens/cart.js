@@ -62,9 +62,8 @@ export default class cart extends Component {
 
   checkout = () => {
     alert('Thank You For Shopping With Us');
-    this.setState({prodTot:0})
     this.props.navigation.navigate('Home');
-  }
+  };
 
   render() {
     //console.log(this.props.navigation.getParam('cart'));
@@ -104,9 +103,7 @@ export default class cart extends Component {
             </Text>
           </View>
           <View style={{alignItems: 'center', margin: 17}}>
-            <Button
-              style={{width: 85}}
-              onPress={() => this.checkout()}>
+            <Button style={{width: 85}} onPress={() => this.checkout()}>
               <Text style={{marginLeft: 8}}>Check Out!</Text>
             </Button>
           </View>
